@@ -1,0 +1,118 @@
+/*
+// Author: Fredrik Åhman
+// Course: PHPMVC @ BTH
+// File: style.css
+// Desc: Core style for my Lydia based framework called Konrad.
+*/
+@import url(../../../themes/grid/style.css);
+
+
+label{font-size:large;}
+textarea{
+	font:inherit;
+	width:45em;
+	height:20em;
+}
+
+// Author: Fredrik Åhman
+// Course: PHPMVC @ BTH
+// File: style.less
+// Desc: A copied grid theme for lydia now for Konrad too.
+/**
+ * Description: Grid theme for Lydia based on less, lessphp and semantic.gs.
+ */
+
+/** --------------------------------------------------------------
+ * semantic.gs
+ */
+@import url(semantic.gs/stylesheets/less/grid.less);
+@import url(http://fonts.googleapis.com/css?family=Tangerine);
+/** --------------------------------------------------------------
+ * Settings
+ */
+@color_yellow: #FFF000;
+@color_light_brown: #4D2B15;
+@color_dark_brown: #443322;
+@color_dark_green: #008000;
+@color_light_green: #73D216;
+@color_light_blue: #00FFFF;
+@color_fire_red: #CC3311;
+@color_blood_red: #991100;
+@color_gold: #CCAA33;
+@color_dull_silver: #BBAAAA;
+@color_vibrant_silver: #DDDDCC;
+@font_family: Tangerine;
+@font: Tangerine;
+@font_weight: 600;
+@font_family_arial: Arial;
+@font_arial: Arial;
+@font_size_arial: 0.8em;
+
+/* Wrap elements to site width in grid layout*/
+.wrap() {width:@total-width;margin:0 auto;.clearfix();}
+
+@magic-number:22px;
+
+
+/** --------------------------------------------------------------
+ * HTML & Body
+ */
+html{
+	background-color:#FFFFFF;
+}
+body{
+	margin:0;
+	padding:0;
+	color: #111111;
+	background-color:#AAAAAA;
+	font-family:San-Serif;
+	font: San-Serif;
+}
+
+/** --------------------------------------------------------------
+ * The header area.
+ */
+#header{}
+
+/** --------------------------------------------------------------
+ * Banner
+ */
+#site-logo{}
+#site-title{	}
+#site-slogan{}
+
+
+/** --------------------------------------------------------------
+ * The main content area.
+ */
+
+#main{}
+
+#primary{}
+#sidebar{}
+
+/** --------------------------------------------------------------
+ * The triptych area.
+ */
+#outer-wrap-triptych{}
+#inner-wrap-triptych{}
+#triptych{}
+
+#triptych-first,
+#triptych-middle,
+#triptych-last{}
+
+/** --------------------------------------------------------------
+ * The footer area.
+ */
+#footer{
+	font-family: Serif;
+	font-size:1.0em;
+	color:#666;
+	padding-bottom:1.0em;
+}
+
+/** --------------------------------------------------------------
+ * Links
+ */
+a{}

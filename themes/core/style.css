@@ -1,0 +1,43 @@
+/*
+// Author: Fredrik Åhman
+// Course: PHPMVC @ BTH
+// File: style.css
+// Desc: Core style for my Lydia based framework called Konrad.
+*/
+
+/* Structure */
+html{}
+body{
+	background-color: #FFFFCC;
+	font: 1em Verdana, Arial, Helvetica, sans-serif;
+}
+
+#top{}
+#wrapper{}
+
+#header, #main, #footer{
+	margin: 0 auto;
+	width: 970px;
+	background-color: #CCFFFF;
+	padding: 1em;
+	border: 1px solid #66CCFF;
+}
+
+#login{
+	float: right;
+	font-size: smaller;
+}
+#login a{
+	text-decoration: none;
+}
+
+#main{
+	min-height: 350px;
+}
+
+
+
+
+/* Mos's original validation style */
+.validation-failed{border:2px solid red;}
+.validation-message{color:red;font-size:smaller;}

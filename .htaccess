@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	# Must use RewriteBase on www.student.bth.se RewriteBase for url /~mos/test is /~mos/test/
+	RewriteBase /~frah12/phpmvc/me/kmom10/0.4.6
+	#RewriteBase http://127.0.0.1:8888/phpmvc/me/kmom07/0.4.4
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule (.*) index.php/$1 [NC,L]
+</IfModule>
+	# Added this myself
+	#AddType x-mapp-php5 .php
+	#AddHandler application/x-httpd-php5 .php
+	#SetEnv PHP_VER

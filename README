@@ -1,0 +1,38 @@
+Author: Fredrik Åhman
+Course: PHPMVC @ BTH
+File: index.tpl.php
+Desc: View for the Index controller
+
+This is the Index page
+
+Download and install Konrad
+
+You can download and install Konrad from github.
+From a console/terminal, change directory into the directory you wish to install Konrad too then clone Konrad from Github, liks so:
+git clone git://github.com/frah12/konrad3.git
+
+
+Follow these steps to configure your site:
+
+Edit ".htaccess"-file in Konrad's root directory so that the line: "RewriteBase" reflect your web server path to where you installed Konrad so it looks something like this: "/~user/installation/directory/konrad3". If that doesn't work you might need to enter the full path including the web server address, like so: http://yourwebserver:port/installation/directory/path/konrad3
+
+You need to make these directories and file(s) writable:
+
+konrad3/site/data (chmod 757)
+konrad3/site/data/ckonrad.sqlite (chmod 666)
+konrad3/site/users (chmod 757)
+konrad3/themes/grid (chmod 757) to make "less"-system and "semantic"-grid to work.
+
+To change logo, title of the site, and footer you need to edit the "konrad3/site/config.php" file at section "Themes".
+
+To change the navigation menu you need to edit the "konrad3/site/config.php" file at section "Menu".
+
+Favicon and logo images are stored in the "konrad3/themes/grid"-directory by default.
+
+Click the login-link in the upper right corner to login as "root" using default password root (the "root" password should be change as soon as possible), then click the menu-"admin" link to get to the administrator's page. (If you can't login in point your web browser to: "address/path/to/installation/directory/user/init"). When loged in as root and on the administrator's control panel you should see users and and database actions in the primary frame, and certain tasks available in the sidebar.
+
+If you are logged in as root, it means the user database is initialized. You should now initialize the content database for the blog. When logged in as root, from the administrator's control panel, click the "Init content database..."-link under database actions.
+
+Whilst logged in as root, click the menu-"blog" link to get to your blog section. You should see some default blog posts. In the sidebar you can click the "New post" link to write a new blog post.
+
+To add static "html"-pages. Write your "html"-pages containing only your text and html-markup that goes between the "<body></body>" tags and just drop your "HTML"-files in the "site/pages"-directory, and the "CCPages"-controller will do the rest to load the links to the pages in the "sidebar" and your content will load in the "primary" frame when clicked. See more by pointing your browser to "pages/".</li>

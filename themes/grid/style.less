@@ -1,0 +1,300 @@
+// Author: Fredrik Åhman
+// Course: PHPMVC @ BTH
+// File: style.less
+// Desc: A copied grid theme for lydia now for Konrad too.
+/**
+ * Description: Grid theme for Lydia based on less, lessphp and semantic.gs.
+ */
+
+/** --------------------------------------------------------------
+ * semantic.gs
+ */
+@import url(semantic.gs/stylesheets/less/grid.less);
+@import url(http://fonts.googleapis.com/css?family=Tangerine);
+/** --------------------------------------------------------------
+ * Settings
+ */
+@color_yellow: #FFF000;
+@color_light_brown: #4D2B15;
+@color_dark_brown: #443322;
+@color_dark_green: #008000;
+@color_light_green: #73D216;
+@color_light_blue: #00FFFF;
+@color_fire_red: #CC3311;
+@color_blood_red: #991100;
+@color_gold: #CCAA33;
+@color_dull_silver: #BBAAAA;
+@color_vibrant_silver: #DDDDCC;
+@font_family: Tangerine;
+@font: Tangerine;
+@font_weight: 600;
+@font_family_arial: Arial;
+@font_arial: Arial;
+@font_size_arial: 0.8em;
+
+/* Wrap elements to site width in grid layout*/
+.wrap() {width:@total-width;margin:0 auto;.clearfix();}
+
+@magic-number:22px;
+
+
+/** --------------------------------------------------------------
+ * HTML & Body
+ */
+html{
+	background-color:@color_yellow;
+}
+body{
+	margin:0;
+	padding:0;
+	color:@color;
+	background-color:@color_gold;
+	font-family:@font_family;
+	font: @font;
+	font-weight: @font_weight;
+}
+
+/** --------------------------------------------------------------
+ * Typography
+ */
+
+h1{border-bottom:3px double #ccc;padding-bottom:4px;}
+h2{border-bottom:1px solid #ccc;padding-bottom:4px;}
+
+/** --------------------------------------------------------------
+ * Forms
+ */
+input,textarea{font:inherit;}
+input[readonly]{color:#666;}
+label{font-size:smaller;}
+.validation-failed{border:2px solid red;}
+.validation-message{color:red;font-size:smaller;}
+.form-action-link{font-size:smaller;}
+
+.content-edit{
+input[type=text]{width:30em;}
+textarea{width:40em;height:15em;}
+}
+
+
+
+
+/** --------------------------------------------------------------
+ * The header area.
+ */
+.tablecell() {display:table-cell;vertical-align:middle;text-align:center;}
+
+#outer-wrap-header{
+	height:@magic-number*3;
+	margin-bottom:@magic-number/2;
+	background-color:@color_light_blue;
+}
+#inner-wrap-header{.wrap();}
+#header{.column(12);}
+
+/** --------------------------------------------------------------
+ * Login menu
+ */
+#login-menu{
+	float:right;
+	font-size:1.5em;
+	padding-right: 10px;
+	img.gravatar{vertical-align:middle;}
+	a{text-decoration:none;}
+	a:hover{text-decoration:underline;}
+}
+
+/** --------------------------------------------------------------
+ * Banner
+ */
+#banner {
+	display:table;
+	margin-bottom:@magic-number/2;
+	#site-logo{.tablecell();}
+	#site-title{
+		.tablecell();
+		font-size:3.5em;
+		padding-left:0.2em;
+		text-shadow:#ccc 2px -2px 2px;
+		a{
+			text-decoration:none;
+		}
+	}
+	#site-slogan{
+		.tablecell();
+		font-size:2.5em;
+		padding-left:0.2em;
+	}
+}
+
+/** --------------------------------------------------------------
+ * The flash area.
+ */
+#outer-wrap-flash{}
+#inner-wrap-flash{
+	.wrap();
+	height:@magic-number*2;
+	margin-bottom:@magic-number/2;
+}
+#flash{
+	.column(12);
+	background-color:@color_fire_red;
+	font-size: 2em;
+	height:100%;
+}
+
+/** --------------------------------------------------------------
+ * The featured area.
+ */
+#outer-wrap-featured{}
+#inner-wrap-featured{
+	.wrap;
+	height:@magic-number*1;
+	margin-bottom:@magic-number;
+}
+#featured{}
+
+#featured-first,
+#featured-middle,
+#featured-last{
+	.column(4);
+	background-color:@color_dark_brown;
+	height:100%;
+}
+
+/** --------------------------------------------------------------
+ * The main content area.
+ */
+#outer-wrap-main{}
+#inner-wrap-main{
+	.wrap;
+	/*height:@magic-number*14;*/
+	margin-bottom:@magic-number/2;
+}
+#main{}
+
+#primary{
+	.column(8);
+	font-family: @font_family_arial;
+	font: @font_arial;
+	font-size: @font_size_arial;
+	color: @color_vibrant_silver;
+	background-color:@color_light_brown;
+	height:100%;
+	/*overflow-x: scroll;*/
+}
+#sidebar{
+	.column(4);
+	font-family: @font_family_arial;
+	font: @font_arial;
+	font-size: @font_size_arial;
+	color: @color_vibrant_silver;
+	background-color:@color_light_brown;
+	height:100%;
+	/*overflow-x: scroll;*/
+}
+
+/** --------------------------------------------------------------
+ * The triptych area.
+ */
+#outer-wrap-triptych{}
+#inner-wrap-triptych{
+	.wrap();
+	height:@magic-number*1;
+	margin-bottom:@magic-number/2;
+}
+#triptych{height:inherit;}
+
+#triptych-first,
+#triptych-middle,
+#triptych-last{
+	.column(4);
+	background-color:@color_fire_red;
+	height:100%;
+}
+
+/** --------------------------------------------------------------
+ * The footer column area.
+ */
+#outer-wrap-footer-column{
+	background-color:@color_dark_green;
+	border-top:1px solid #bbb;
+}
+
+#inner-wrap-footer-column{
+	.wrap();
+	height:@magic-number*5;
+	padding-top:@magic-number/2;
+	padding-bottom:@magic-number/2;
+}
+#footer{height:inherit;}
+#footer-column-one,
+#footer-column-two{
+	font-size: 1.5em;
+	margin: 1em;
+	height:100%;
+	background-color:lighten(@color_dull_silver,10%);
+}
+
+#footer-column-one{
+	.column(9);
+}
+#footer-column-two{
+	.column(3);
+}
+/** --------------------------------------------------------------
+ * The footer area.
+ */
+#outer-wrap-footer{
+	background-color:@color_vibrant_silver;
+}
+#inner-wrap-footer{.wrap();}
+#footer{
+	.column(12);
+	font-family: Arial;
+	font-size:0.7em;
+	color:#666;
+	padding-bottom:@magic-number;
+}
+
+/** --------------------------------------------------------------
+ * Links
+ */
+.hover(){text-decoration:none;color:#5C0A0A;}
+a{color:inherit;
+&:link{}
+&:visited{}
+&:hover{.hover()}
+&:focus{.hover()}
+&:active{}
+}
+
+/** --------------------------------------------------------------
+ * User feedback message wrappers.
+ */
+.error, .alert, .warning, .notice, .success, .info {padding: 0.8em; margin-bottom: 1em; border: 2px solid #ddd; }
+.error, .alert { background: #fbe3e4; color: #8a1f11; border-color: #fbc2c4; }
+.notice, .warning { background: #fff6bf; color: #514721; border-color: #ffd324; }
+.success{ background: #e6efc2; color: #264409; border-color: #c6d880; }
+.info { background: #d5edf8; color: #205791; border-color: #92cae4; }
+.error a, .alert a { color: #8a1f11; }
+.notice a, .warning a { color: #514721; }
+.success a{ color: #264409; }
+.info a{ color: #205791; }
+
+/** --------------------------------------------------------------
+ * Misc
+ */
+.smaller-text{font-size:smaller;}
+.silent{color:#999;}
+
+#navbar{
+  ul.menu{list-style-type:none;padding:2px 8px;margin:0;
+    li{padding:0;margin:0;display:inline;
+      a{padding:6px 8px;text-decoration:none;border:2px solid transparent;
+        &:hover{background:#ddd;border:2px solid #999;}
+        &.selected{background:#ccc;border:2px solid #999;}
+      }
+    }
+  }
+}
